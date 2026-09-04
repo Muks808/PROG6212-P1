@@ -1,0 +1,32 @@
+name: Part 1 Documentation Check
+
+on:
+  push:
+    branches: ["main", "master", "part1"]
+  pull_request:
+
+jobs:
+  validate-part1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check docs folder
+        shell: bash
+        run: |
+          test -d docs
+          test -f docs/RaceDay_ERD.png
+          test -f docs/API_Endpoint_Plan.md
+          test -f docs/RaceDay_Database.sql
+          echo "All required Part 1 files are present."
+
+      - name: Check README
+        shell: bash
+        run: |
+          test -f README.md
+          grep -qi "RaceDay" README.md
+          grep -qi "Organiser" README.md
+          grep -qi "Participant" README.md
+          echo "README contains the main Part 1 information."
