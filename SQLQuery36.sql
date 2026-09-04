@@ -1,0 +1,15 @@
+SELECT * FROM dbo.Users;
+
+SELECT * FROM dbo.Events;
+
+SELECT * FROM dbo.Categories;
+
+SELECT * FROM dbo.Enrolments;
+
+SELECT * FROM dbo.Results;
+
+SELECT * FROM dbo.EventImages;
+
+SELECT * FROM dbo.ProfileImages;
+
+GO
